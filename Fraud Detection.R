@@ -1,4 +1,4 @@
-setwd("C:/Users/Duker/Desktop/Fall 2020/CS 614/Final Project")
+setwd("C:/Users/Duker/Desktop/Fall 2020/CS 614/Final Project/Fraud-Detection-with-ML")
 #setwd("~/Desktop/614")
 require(ggplot2)
 require(RColorBrewer)
@@ -30,7 +30,7 @@ str(data)
 df = data %>% select(-c(step, nameOrig, oldbalanceDest,
                         newbalanceDest, isFlaggedFraud))
 
-df$nameDest = factor(ifelse(startsWith(nameDest, "M"), 1, 0))
+df$nameDest = factor(ifelse(startsWith(unfactor(nameDest), "M"), 1, 0))
 df$isFraud = factor(df$isFraud)
 df$type = factor(df$type)
 
@@ -200,7 +200,7 @@ plot_confusion_matrix(tidy(smote.rf.cMatrix),
         plot.subtitle = element_text(hjust = 0.5))
 
 smote.rf.labels = c("Type", "Amount", "Old Balance", "New Balance",
-                    "Destination\n(Customer/Merchant)")
+                    "Destination/n(Customer/Merchant)")
 
 caret::varImp(smote.rf)
 smote.rf.Imp = caret::varImp(smote.rf)
