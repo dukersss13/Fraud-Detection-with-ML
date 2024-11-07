@@ -11,3 +11,5 @@ Source: https://www.kaggle.com/ntnu-testimon/paysim1
 Due to the imbalance nature of the dataset, the discrepancy of the target variable could make it very difficult for any classification model to consistently predict at a high level. In addition, it is also important to note that the overall accuracy of any algorithm when trained on an imbalance dataset should be further analyzed and not taken based upon face value. In other words, if all the model is required to do is correctly label the 99.99% of non-fraudulent transactions but fail to pinpoint frauds, then it defeats the sole purpose of having this classification algorithm. 
 
 To overcome this potential issue, we applied SMOTE to the minority sample size in order to achieve a more balanced dataset. Subsequently, we run the two variations of the training data (without SMOTE & with SMOTE) through a Neural Network and Random Forest classifier and compare the results. Please refer to the Final Report for further details and analysis.
+
+See [final report](https://github.com/dukersss13/Fraud-Detection-with-ML/blob/main/Final%20Report.pdf) for more information.
